@@ -1,0 +1,41 @@
+#formboundry {
+    padding: 10px 7px 10px 7px;
+    background-color: #E9F1E9;
+    font-style: normal;
+    font-weight: bold; 
+    box-shadow: 0 4px 10px 0 #080808
+}
+
+.headings {
+    margin: 10px 0px 10px 0px;
+    padding: 5px;
+    background: #080808; 
+    color: white; 
+    text-align: left;
+    font-weight: bold
+}
+
+
+.errormessage {
+    color: red;
+    font-size: 13px
+}
+
+#submitbutton {
+    margin-left: 360px; 
+    background: black;
+    color: white
+}
+
+#outputscreen {
+    border: 1px solid black; 
+    margin: 15px 0px 15px 0px; 
+    padding: 2px; 
+    background: white; 
+    color: black
+}
+
+#outputscreenblock {
+    border: 2px solid red; 
+    padding: 10px
+}
