@@ -1,22 +1,71 @@
-#block1 {
+
+.blocks {
     background: rgb(244, 250, 249);
     color: rgb(38, 39, 39);
     border: 1px solid greenyellow;
     padding: 1px;
-    width: 300px;
-    height: 400px;
+    width: 780px;
+    height: 800px;
     text-align: center;
     font-weight: bold;
-    margin: 100px 450px 100px 450px;
+    margin: 10px 200px 10px 250px;
     box-shadow: 0 4px 10px 0 #080808
+}
+
+.heading1 {
+    background: #472847;
+    color: white;
+    font-weight: bold;
+}
+
+.heading2 {
+    background: #472847;
+    color: white;
+    font-weight: bold;
+    width: 500px;
+    margin: 0px 130px 0px 130px;
+    box-shadow: 0 4px 10px 0 #080808;
 }
 
 #info {
     background: rgb(202, 243, 248);
     color: rgb(71, 40, 71);
-    margin: 10px;
-    height: 100px;
+    margin: 0px 130px 10px 130px;
+    height: 180px;
+    width: 500px;
     text-align: center;
     overflow-x: hidden;
     overflow-x: auto;
+    border: 0px solid black;
+    box-shadow: 0 4px 10px 0 #080808;
+}
+
+.extensions {
+    width: 150px;
+    height: 120px;
+    font-weight: bold;
+    float: left;
+    border: 1px solid black;
+    background: rgba(112, 239, 243, 0.185);
+    padding: 5px;
+    box-shadow: 0 4px 10px 0 #080808;
+    margin: 2px;
+}
+.extensionname {
+    padding: 5px;
+    border: 1px solid black;
+    background: #283247;
+    color: rgb(255, 255, 255);
+}
+
+.extensions:hover {
+    background: rgba(52, 72, 94, 0.185);;
+} 
+
+.addbutton {
+    padding: 5px;
+    background: rgb(80, 85, 84);
+    color: white;
+    margin: 0px 0px 15px 0px;
+    border-radius: 5px;
 }
