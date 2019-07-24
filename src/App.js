@@ -7,9 +7,9 @@ const Count = props => {
     <div>
       <div class="blocks"><h1 class="heading1">Store</h1>
         <hr/>
-        <button class="heart" value={props.subscriptionBlock ? 'unsubscribe' : 'subscribe'} onClick={() => props.read({name: 'subscribe', i: props.activeIndex})}>{props.subscriptionBlock ? 'unsubscribe' : 'subscribe'}</button>
+        <button class="heart" value={props.subscriptionBlock === 'subscribe' ? 'unsubscribe' : 'subscribe'} onClick={() => props.read({name: 'subscribe', i: props.activeIndex})}>{props.subscriptionBlock}</button>
         <button class="heart" value={props.likesBlock} onClick={() => props.read({name: 'like', i: props.activeIndex})}>LikeMe  {props.likesBlock}</button><hr/><hr/>
-        <div>{props.subscriptionBlock}
+        <div>
           <div><h3 class="heading2">Description</h3></div>
           <div class="info">
           {props.description}

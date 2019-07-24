@@ -3,7 +3,7 @@ export default {
       activeIndex: null,
       added: [],
       likesBlock: null,
-      subscriptionBlock: null,
+      subscriptionBlock: 'subscribe',
       extensions: [
         {name: 'Ably', subscribe: false, likes: 0, added: false}, 
         {name: 'Pusher', subscribe: false, likes: 0, added: false}, 
@@ -123,7 +123,7 @@ export default {
             if(state.activeIndex === null)   return state
             return Object.assign({}, state, {
               extensions: newArr2,
-              subscriptionBlock: state.extensions[state.activeIndex].subscribe ? false : true
+              subscriptionBlock: state.extensions[state.activeIndex].subscribe ? 'subscribe' : 'unsubscribe'
             })
           default:
             return Object.assign({}, state, {
