@@ -23,11 +23,13 @@
     color: white;
     font-weight: bold;
     width: 500px;
-    margin: 0px 130px 0px 130px;
-    box-shadow: 0 4px 10px 0 #080808;
+    margin: 0px 0px 0px 130px;
+    box-shadow: 0px 4px 10px 0 #080808;
+    border: 0px solid yellow;
+    float: left;
 }
 
-#info {
+.info {
     background: rgb(202, 243, 248);
     color: rgb(71, 40, 71);
     margin: 0px 130px 10px 130px;
@@ -38,6 +40,16 @@
     overflow-x: auto;
     border: 0px solid black;
     box-shadow: 0 4px 10px 0 #080808;
+}
+
+
+#heart {
+    border: 1px solid black;
+    background: rgb(61, 56, 56); 
+    color: #e0dde0;
+    font-size: 15px;
+    padding: 4px;
+    width: 60px;
 }
 
 .extensions {
@@ -68,4 +80,12 @@
     color: white;
     margin: 0px 0px 15px 0px;
     border-radius: 5px;
+}
+
+#choiseblock {
+    background: red;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(54, 247, 54);
+    float: right;  
 }
