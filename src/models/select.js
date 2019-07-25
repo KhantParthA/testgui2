@@ -1,7 +1,7 @@
 export default {
     state: {
       activeIndex: null,
-      added: [],
+      added: ['Ably', 'Pusher'],
       likesBlock: null,
       subscriptionBlock: 'subscribe',
       extensions: [
@@ -20,7 +20,8 @@ export default {
       description: 'Real-Time Technologies',
     },
     reducers: {
-      read: (state, Payload) => {  
+      read: (state, Payload) => {
+        let newArr = []  
         switch(Payload.name) {
           case 'Ably': 
             return Object.assign({}, state, {
@@ -100,7 +101,7 @@ export default {
             subscriptionBlock: state.extensions[Payload.i].subscribe ? 'unsubscribe' : 'subscribe'  
             })
           case 'like':
-            let newArr = state.extensions.map((obj, index) => {
+            newArr = state.extensions.map((obj, index) => {
               if(index === state.activeIndex){ 
                 return {...obj, likes: state.extensions[index].likes + 1}
               } 
@@ -113,16 +114,16 @@ export default {
               likesBlock: state.extensions[state.activeIndex].likes + 1
             })
           case 'subscribe':
-            let newArr2 = state.extensions.map((obj, index) => {
+            newArr = state.extensions.map((obj, index) => {
               if(index === state.activeIndex){ 
                 return {...obj, subscribe: state.extensions[index].subscribe ? false : true}
               } 
               else return obj
             })
-            console.log(newArr2)
+            console.log(newArr)
             if(state.activeIndex === null)   return state
             return Object.assign({}, state, {
-              extensions: newArr2,
+              extensions: newArr,
               subscriptionBlock: state.extensions[state.activeIndex].subscribe ? 'subscribe' : 'unsubscribe'
             })
           default:
@@ -132,6 +133,36 @@ export default {
             likesBlock: null  
             })     
         }
+      },
+      use: (state, Payload) => {
+        // let newArr1 = []
+        // let result = state.added.filter(arrval => arrval === Payload.name)
+         
+        // console.log(result)
+        // if(!result.length){ 
+        //   state.added.push(Payload.name)
+        //   console.log(state.added)
+        //   newArr1 = state.added 
+        //   return Object.assign({}, state, {
+        //     added: newArr1
+        //   })
+        // }
+        // if(Payload.name === 'pattern'){
+          // let n = 3, i, j;
+          // for(i = 0; i < n; i++){
+          //   for(j = 0; j < n; j++){
+          //     console.log("*")
+          //   }
+          // }
+          return state
+        
+        // return Object.assign({}, state, {
+        //   added: newArr1
+        // })
+        // return state
+        // let app = state.added.push(Payload.name)
+        
       }
+
     }  
   }  

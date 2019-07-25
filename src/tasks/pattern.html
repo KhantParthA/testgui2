@@ -1,0 +1,62 @@
+<html>
+<head>
+</head>
+	<body>
+	<div id="patternBlock"></div>
+	<script>
+		let i = 0, j = 0, n = 5, k = "";
+		let m = ((n-1)/2)+1;
+		let temp;
+		console.log("middle is",m)
+		for(i = 1; i <= n; i++) {
+			for(j = 1; j <= n; j++) { 										
+				if(i <= m) {
+					if((m-i) != 0){
+						if((m-i) < j) { 
+							k += i
+						}
+						else {
+							k += ' '
+						}
+						
+					}
+					else{
+						k += i
+					}
+				}
+			}
+			console.log(k)
+			k = ''	
+		}
+
+
+		// for(i = 1; i <= n; i++) {
+		// 	for(j = 1; j <= n; j++) { 										
+				
+		// 		k += i
+		// 	}											
+		// 	console.log(k)	
+		// 	k = "" 
+		// }
+
+		// for(i = 1; i <= n; i = i+2) {
+		// 	for(j = 1; j <= i; j++) { 				
+								
+		// 		if(i <= m){  
+		// 			k += "*"
+		// 		}
+		// 		else { 
+		// 			temp -= 2
+		// 			if(temp > 0) {					
+		// 			k += i
+		// 			console.log(temp)
+		// 			}
+		// 		}	
+		// 	}
+													
+			// console.log(k)	
+			// k = "" 
+				
+	</script>
+	</body>
+</html>

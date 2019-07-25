@@ -9,6 +9,7 @@ const Count = props => {
         <hr/>
         <button class="heart" value={props.subscriptionBlock === 'subscribe' ? 'unsubscribe' : 'subscribe'} onClick={() => props.read({name: 'subscribe', i: props.activeIndex})}>{props.subscriptionBlock}</button>
         <button class="heart" value={props.likesBlock} onClick={() => props.read({name: 'like', i: props.activeIndex})}>LikeMe  {props.likesBlock}</button><hr/><hr/>
+        <button class="heart" value={props.likesBlock} onClick={() => props.use({name: 'pattern'})}>Pattern</button><hr/><hr/>
         <div>
           <div><h3 class="heading2">Description</h3></div>
           <div class="info">
@@ -16,7 +17,7 @@ const Count = props => {
           </div>
           {props.extensions.map( (extension, index) => 
             <div class="extensions"><div class="extensionname" onClick={() => props.read({name: extension.name, i: index})}>{extension.name}</div><hr/>
-            <button id={extension.name} class="addbutton" value={extension.name} onClick={() => props.read(index)}>{extension.added ? "Remove" : "Add"}</button>
+            <button id={extension.name} class="addbutton" value={extension.name} onClick={() => props.use({name: extension.name, i: index})}>{extension.added ? "Remove" : "Add"}</button>
             </div>    
           )}
           <hr/>
@@ -24,8 +25,9 @@ const Count = props => {
       </div>
       <div class="blocks"><h1 class="heading1">Desktop</h1>
         {props.added.map(extension => 
-          <div>{extension}</div>  
+          <div class='apps'>{extension}</div>  
         )}
+        <hr/>
       </div>
     </div>    
   )
@@ -40,7 +42,8 @@ const mapState = state => ({
 })
 
 const mapDispatch = dispatch => ({
-  read: (data) => dispatch.select.read(data) 
+  read: (data) => dispatch.select.read(data),
+  use: (data) => dispatch.select.use(data) 
 })
 
 export default connect(mapState, mapDispatch)(Count)
